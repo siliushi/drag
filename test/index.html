@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#contain{
+			border:1px solid #990000;
+			width:600px;
+			height:300px;
+			margin-top: 100px;
+		}
+		#demo{
+			cursor:move;
+			top:0px;
+			left:0px;
+		}
+		#test {
+			height:50px;
+			width:50px;
+			background:#000;
+		}
+	</style>
+</head>
+<body>
+<div id="test"></div>
+<div id="position"></div>
+<div id="contain">
+	<div id="demo">
+		<img src="6.jpg" alt="" />
+	</div>
+</div>
+
+	<script src="../src/drag.js">
+	</script>
+	<script>
+		var drag = new Drag("test", {
+			onStart: function(){
+
+			},
+			onMove: function(){
+				document.getElementById('position').innerHTML = '距离左边：' + drag.getPositions().left + '；距离顶部：' + drag.getPositions().top;
+			},
+			onStop: function(){
+
+			}
+		});
+
+		new Drag("demo", {
+			container: 'contain',
+			onStart: function(){
+
+			},
+			onMove: function(){
+
+			},
+			onStop: function(){
+
+			}
+		});
+	</script>
+</body>
+</html>
